@@ -15,7 +15,7 @@ English | [Chinese](./README.zh-CN.md)
 
 Live demo: [https://www.kaaaaai.cn/bb/](https://www.kaaaaai.cn/bb/)
 
-![Hexo BB Channel desktop preview](https://raw.githubusercontent.com/Kaaaaai/kaaaaai.tools.hexo-bb-channel/main/docs/assets/preview-desktop.png)
+![Hexo BB Channel desktop preview](https://raw.githubusercontent.com/AweStudioX/hexo-bb-channel/main/docs/assets/preview-desktop.png)
 
 ## Why This Design
 
@@ -51,7 +51,7 @@ npm install hexo-bb-channel
 To try unreleased changes from the default GitHub branch instead:
 
 ```bash
-npm install github:Kaaaaai/kaaaaai.tools.hexo-bb-channel
+npm install github:AweStudioX/hexo-bb-channel
 ```
 
 Installing the Hexo plugin does not deploy the companion API. Complete step 1 and keep the `bb_channel` block in your site's root `_config.yml`.

@@ -15,7 +15,7 @@
 
 在线示例：[https://www.kaaaaai.cn/bb/](https://www.kaaaaai.cn/bb/)
 
-![Hexo BB Channel 桌面端预览](https://raw.githubusercontent.com/Kaaaaai/kaaaaai.tools.hexo-bb-channel/main/docs/assets/preview-desktop.png)
+![Hexo BB Channel 桌面端预览](https://raw.githubusercontent.com/AweStudioX/hexo-bb-channel/main/docs/assets/preview-desktop.png)
 
 ## 为什么这样设计
 
@@ -51,7 +51,7 @@ npm install hexo-bb-channel
 如需试用 GitHub 默认分支上尚未发布的改动，可改为：
 
 ```bash
-npm install github:Kaaaaai/kaaaaai.tools.hexo-bb-channel
+npm install github:AweStudioX/hexo-bb-channel
 ```
 
 安装 Hexo 插件不会自动部署配套 API。请先完成第 1 步，并保留站点根目录 `_config.yml` 中的 `bb_channel` 配置。
