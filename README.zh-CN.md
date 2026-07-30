@@ -33,9 +33,9 @@
 
 先部署配套 API：
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKaaaaai%2Fkaaaaai.tools.channel-api&project-name=kaaaaai-tools-channel-api&repository-name=kaaaaai.tools.channel-api&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22upstash%22%2C%22productSlug%22%3A%22upstash-kv%22%2C%22protocol%22%3A%22storage%22%2C%22allowConnectExistingProduct%22%3Atrue%7D%5D&env=TG_CHANNEL,ALLOWED_ORIGINS,REFRESH_SECRET&CACHE_TTL=300&PAGE_SIZE=20&MAX_FETCH_PAGES=2&POST_LIMIT=500)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAweStudioX%2Fchannel-api&project-name=channel-api&repository-name=channel-api&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22upstash%22%2C%22productSlug%22%3A%22upstash-kv%22%2C%22protocol%22%3A%22storage%22%2C%22allowConnectExistingProduct%22%3Atrue%7D%5D&env=TG_CHANNEL,ALLOWED_ORIGINS,REFRESH_SECRET&CACHE_TTL=300&PAGE_SIZE=20&MAX_FETCH_PAGES=2&POST_LIMIT=500)
 
-后端仓库：[Kaaaaai/kaaaaai.tools.channel-api](https://github.com/Kaaaaai/kaaaaai.tools.channel-api)
+后端仓库：[AweStudioX/channel-api](https://github.com/AweStudioX/channel-api)
 详细的 Telegram 频道创建步骤见 API 仓库 README。
 
 生产环境请将 `ALLOWED_ORIGINS` 设置为博客的完整 Origin，例如 `https://www.example.com`，确保生成页面能够请求 API。
@@ -94,7 +94,7 @@ http://localhost:4000/bb/
 | `route` | `bb/` | 页面路由，例如 `moments/`。 |
 | `title` | `moments` | 页面内容区标题。 |
 | `description` | 空 | 页面描述。 |
-| `api_base` | 空 | client 模式必填。`kaaaaai.tools.channel-api` 的 API 根地址；未配置时页面会显示 `Missing bb_channel.api_base`。 |
+| `api_base` | 空 | client 模式必填。`channel-api` 的 API 根地址；未配置时页面会显示 `Missing bb_channel.api_base`。 |
 | `page_size` | `20` | 每页拉取数量。 |
 
 ## 工作原理
@@ -106,7 +106,7 @@ Hexo build
 Browser
   └─ 请求 api_base/api/posts?page=1&page_size=20
 
-kaaaaai.tools.channel-api
+channel-api
   ├─ 抓取公开 Telegram Channel 页面
   ├─ 解析消息、标签、图片、文件
   └─ 将标准化数据缓存到 Upstash Redis
@@ -208,7 +208,7 @@ npm test
 
 ## 相关项目
 
-- API 后端：[Kaaaaai/kaaaaai.tools.channel-api](https://github.com/Kaaaaai/kaaaaai.tools.channel-api)
+- API 后端：[AweStudioX/channel-api](https://github.com/AweStudioX/channel-api)
 
 ## License
 

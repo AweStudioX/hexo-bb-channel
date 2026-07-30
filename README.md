@@ -33,9 +33,9 @@ Create a public Telegram channel first. Its public link should look like `https:
 
 Deploy the companion API first:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKaaaaai%2Fkaaaaai.tools.channel-api&project-name=kaaaaai-tools-channel-api&repository-name=kaaaaai.tools.channel-api&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22upstash%22%2C%22productSlug%22%3A%22upstash-kv%22%2C%22protocol%22%3A%22storage%22%2C%22allowConnectExistingProduct%22%3Atrue%7D%5D&env=TG_CHANNEL,ALLOWED_ORIGINS,REFRESH_SECRET&CACHE_TTL=300&PAGE_SIZE=20&MAX_FETCH_PAGES=2&POST_LIMIT=500)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAweStudioX%2Fchannel-api&project-name=channel-api&repository-name=channel-api&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22upstash%22%2C%22productSlug%22%3A%22upstash-kv%22%2C%22protocol%22%3A%22storage%22%2C%22allowConnectExistingProduct%22%3Atrue%7D%5D&env=TG_CHANNEL,ALLOWED_ORIGINS,REFRESH_SECRET&CACHE_TTL=300&PAGE_SIZE=20&MAX_FETCH_PAGES=2&POST_LIMIT=500)
 
-Backend repo: [Kaaaaai/kaaaaai.tools.channel-api](https://github.com/Kaaaaai/kaaaaai.tools.channel-api)
+Backend repo: [AweStudioX/channel-api](https://github.com/AweStudioX/channel-api)
 See the API README for detailed Telegram channel creation steps.
 
 For production, set `ALLOWED_ORIGINS` to your blog's exact origin, for example `https://www.example.com`, so the API accepts requests from the generated page.
@@ -94,7 +94,7 @@ http://localhost:4000/bb/
 | `route` | `bb/` | Output route, for example `moments/`. |
 | `title` | `moments` | Page title inside the content area. |
 | `description` | empty | Subtitle under the title. |
-| `api_base` | empty | Required in client mode. Base URL of `kaaaaai.tools.channel-api`; when omitted, the page shows `Missing bb_channel.api_base`. |
+| `api_base` | empty | Required in client mode. Base URL of `channel-api`; when omitted, the page shows `Missing bb_channel.api_base`. |
 | `page_size` | `20` | Posts requested per page. |
 
 ## How It Works
@@ -106,7 +106,7 @@ Hexo build
 Browser
   └─ fetches api_base/api/posts?page=1&page_size=20
 
-kaaaaai.tools.channel-api
+channel-api
   ├─ fetches public Telegram channel pages
   ├─ parses posts, tags, media, files
   └─ caches normalized payload in Upstash Redis
@@ -208,7 +208,7 @@ npm test
 
 ## Related
 
-- API backend: [Kaaaaai/kaaaaai.tools.channel-api](https://github.com/Kaaaaai/kaaaaai.tools.channel-api)
+- API backend: [AweStudioX/channel-api](https://github.com/AweStudioX/channel-api)
 
 ## License
 
