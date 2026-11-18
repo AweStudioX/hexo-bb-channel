@@ -1,5 +1,6 @@
 const { fileIcon } = require('./icons');
 const { createDeepLinkController, normalizePage, readDeepLink } = require('./deep-link');
+const { renderTags } = require('./render-tags');
 
 function escapeHtml(value = '') {
   return String(value)
@@ -21,6 +22,7 @@ function renderClientScript() {
         const normalizePage = ${normalizePage.toString()};
         const readDeepLink = ${readDeepLink.toString()};
         const createDeepLinkController = ${createDeepLinkController.toString()};
+        const renderTags = ${renderTags.toString()};
         window.initBbChannel = window.initBbChannel || (() => {
           const root = document.querySelector('[data-bb-channel-root]');
           const previousRuntime = window.__bbChannelRuntime;
@@ -72,7 +74,7 @@ function renderClientScript() {
             '</figure>'
           ).join('');
           const carousel = images.length > 1;
-          const tags = (post.tags || []).map((tag) => '<span>#' + escapeHtml(tag) + '</span>').join('');
+          const tags = renderTags(post, escapeHtml);
           const attachments = (post.attachments || []).map((item) =>
             '<a class="bb-channel-attachment" href="' + escapeHtml(item.url || (post.source && post.source.telegramUrl) || '#') + '" target="_blank" rel="noopener noreferrer">' +
               '<span class="bb-channel-attachment-icon">' + bbChannelFileIcon + '</span>' +
@@ -93,7 +95,7 @@ function renderClientScript() {
                 '<div class="bb-channel-main">' +
                   (post.html || '') +
                   (attachments ? '<div class="bb-channel-attachments">' + attachments + '</div>' : '') +
-                  (tags ? '<footer class="bb-channel-tags">' + tags + '</footer>' : '') +
+                  tags +
                 '</div>' +
                 (media ? '<div class="bb-channel-media-rail" data-bb-media-rail>' + media + '</div>' : '') +
               '</div>' +

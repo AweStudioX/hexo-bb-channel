@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.2 - 2026-11-18
+
+### Fixed
+
+- Avoid repeating Telegram hashtag entities in the metadata tag footer; keep tags absent from the post body visible.
+
 ## 0.2.1 - 2026-07-22
 
 ### Fixed
